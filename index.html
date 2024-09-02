@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal API Integration</title>
+    <style>
+        body, h1, button, input {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 2.4em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #searchContainer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .animal-card {
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .animal-card:hover {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .animal-card img {
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 4px solid #3498db;
+        }
+
+        .animal-card .details {
+            flex: 1;
+        }
+
+        .animal-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.6em;
+            color: #34495e;
+        }
+
+        .animal-card p {
+            margin: 5px 0;
+            color: #7f8c8d;
+        }
+
+        #animalContainer {
+            margin-top: 20px;
+        }
+
+        #loading {
+            text-align: center;
+            font-size: 1.2em;
+            color: #3498db;
+            margin: 20px 0;
+        }
+
+        #emptyState {
+            text-align: center;
+            font-size: 1.2em;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animal API Integration</h1>
+    <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Search for dog breeds...">
+        <button id="searchBtn">Search</button>
+    </div>
+    <div id="loading" style="display: none;">Loading...</div>
+    <div id="emptyState" style="display: none;">No results found.</div>
+    <div id="animalContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
